@@ -1,0 +1,19 @@
+# **Deterministic Finite State Automata (FSA) \- Python**
+
+Este proyecto es una implementación de un **Autómata Finito Determinista (DFA)** capaz de validar cadenas de texto según reglas específicas (alfabéticas o numéricas). El código ha sido consolidado en un único archivo para facilitar su ejecución y estudio.
+
+## **📋 Descripción**
+
+El programa permite al usuario interactuar con un menú para validar si una entrada pertenece a un lenguaje regular específico:
+
+* **Validación Alfabética:** Acepta cadenas que contienen únicamente letras \[A-Za-z\]+.  
+* **Validación Numérica:** Acepta cadenas que contienen únicamente dígitos \[0-9\]+.
+
+## **🚀 Estructura del Código**
+
+Toda la lógica se encuentra en el archivo principal e incluye las siguientes clases:
+
+* **Pattern:** Almacena la expresión o patrón a validar.  
+* **RegularExpression:** Clase base para las reglas de validación.  
+* **AlphabeticExpression / NumericExpression:** Implementan la lógica específica para letras y números.  
+* **FiniteStateAutomata:** El motor del autómata que gestiona los estados (q0 como inicial y q1 como aceptación) y las transiciones.
