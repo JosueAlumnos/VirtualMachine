@@ -1,4 +1,4 @@
-# --- Implementación Única del Autómata Finito (Traducción de C++ a Python) ---
+# --- Implementación Única del Autómata Finito---
 
 class Pattern:
     def __init__(self, p: str):
