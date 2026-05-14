@@ -124,19 +124,34 @@ class VirtualMachine:
 if __name__ == "__main__":
     vm = VirtualMachine()
 
-    # P rograma que prueba el set de instrucciones
-    # Simulamos datos en memoria
+    # Datos iniciales
     vm.memory[10] = 50
     vm.memory[11] = 25
 
+    # Instrucciones almacenadas en la memoria simulada
     test_program = [
         "START",
-        "MOVE AL, 10",    # Carga 50 en AL
-        "MOVE BL, 11",    # Carga 25 en BL
-        "ADD AL, BL",     # Suma AL + BL (75) -> ACC
-        "STO 12",         # Guarda ACC en la dirección 12
+        "MOVE AL, 10",
+        "MOVE BL, 11",
+        "ADD AL, BL",
+        "STO 12",
         "STOP"
     ]
 
+    print(">>> CARGANDO PROGRAMA EN MEMORIA PRINCIPAL...")
     vm.load_program(test_program)
+    
+    print(">>> INICIANDO CICLO DE MÁQUINA...")
     vm.run_cycle()
+
+    # RESUMEN EJECUTIVO
+    print("\n" + "="*45)
+    print("         RESUMEN DE ACCIONES FINALES")
+    print("="*45)
+    print(f"Operación realizada         : {test_program[3]}")
+    print(f"Valor final en Acumulador   : {vm.registers['ACC']}")
+    print(f"Persistencia en Memoria (12): {vm.memory[12]}")
+    print(f"Estado final del PC         : {vm.registers['PC']}")
+    print(f"Estado del Registro AL      : {vm.registers['AL']}")
+    print(f"Estado del Registro BL      : {vm.registers['BL']}")
+    print("="*45)
